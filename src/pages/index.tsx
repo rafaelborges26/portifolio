@@ -1,17 +1,27 @@
+import {Profile} from '../components/Profile';
 import Head from 'next/head'
 import {ExperienceBar} from "../components/ExperienceBar";
+import styles from '../styles/pages/Home.module.css'
+import { CompletedChallenges } from '../components/CompletedChallenges';
+import { CountDown } from '../components/CountDown';
 
 //o que será a home da pagina
 export default function Home() {
   return (
-      <div className="container">
-        <Head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap" rel="stylesheet" />
-        </Head>
-        
+      <div className={styles.container}>   
+      <Head>
+        <title> Inicio | Move.it</title>
+      </Head>
      <ExperienceBar/>      
+
+    <section>
+      <div>
+        <Profile />
+        <CompletedChallenges />
+        <CountDown /> 
       </div>
-    
+    </section>
+
+      </div>
   )
 }
