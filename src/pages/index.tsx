@@ -4,6 +4,7 @@ import {ExperienceBar} from "../components/ExperienceBar";
 import styles from '../styles/pages/Home.module.css'
 import { CompletedChallenges } from '../components/CompletedChallenges';
 import { CountDown } from '../components/CountDown';
+import { ChallengeBox } from '../components/ChallengeBox'
 
 //o que será a home da pagina
 export default function Home() {
@@ -19,6 +20,9 @@ export default function Home() {
         <Profile />
         <CompletedChallenges />
         <CountDown /> 
+      </div>
+      <div>
+        <ChallengeBox />
       </div>
     </section>
 
