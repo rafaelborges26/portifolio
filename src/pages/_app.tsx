@@ -1,15 +1,15 @@
 //parte onde colocar os componentes fixos, onde não mudam
 
 import '../styles/global.css';
-import { ChallengesContext, challengesProvider } from '../contexts/ChallengesContext'
+import { ChallengesProvider } from '../contexts/ChallengesContext'
 
 
 function MyApp({ Component, pageProps }) {
 
   return (
-    <challengesProvider>
+    <ChallengesProvider>
   <Component {...pageProps} />
-  </challengesProvider>
+  </ChallengesProvider>
   )
 }
 
