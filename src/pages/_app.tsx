@@ -7,10 +7,8 @@ import { CountdownProvider } from '../contexts/CountDownContext';
 
 function MyApp({ Component, pageProps }) {
 
-  return (
-    <ChallengesProvider>
+  return ( 
         <Component {...pageProps} />
-    </ChallengesProvider>
   )
 }
 
