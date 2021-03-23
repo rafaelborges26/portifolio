@@ -84,6 +84,7 @@
 
 .challengeActive footer button{
     height: 3rem;
+    width: 6rem;
 
     display: flex;
     align-items: center;
