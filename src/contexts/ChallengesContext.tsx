@@ -66,19 +66,20 @@ export function ChallengesProvider({ children, ...rest }: ChallengeContextProps)
         setIsLevelUpModalOpen(false)
     } 
 
-    function startNewChallenge() {
+    async function startNewChallenge() {
         const randomChallengeIndex = Math.floor(Math.random() * challenges.length)
         const challenge = challenges[randomChallengeIndex]
 
         setActiveChallenge(challenge)
 
-        new Audio('/notification.mp3').play()
+        new Audio('/public_notification.mp3').play()
 
-        if(Notification.permission === 'granted') 
-            new Notification('Novo desafio 🎉', {
+        if(Notification.permission === 'granted') { 
+          new Notification('Novo desafio 🎉', {
                 body: `Valendo ${challenge.amount}xp`
             })
         }
+    }
 
     function resetChallenge() {
         setActiveChallenge(null)
