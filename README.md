@@ -5,10 +5,19 @@
 <p align="center">o projeto incentiva o uso desse tempo de descanso com tarefas simples e que ajudam a evitar problemas de visão e problemas corporais, tornando a experiencia das tarefas melhores</p>
 
 <h1 align="center">
-    <a href="https://moveitnow-one.vercel.app//">🔗 Moveitnow</a>
+    <a href="https://moveitnow-one.vercel.app/">🔗 Moveitnow</a>
 </h1>
 <p align="center">🚀 Aplicação web moveitnow</p>
 
+### 🛠 Utilizar
+
+Para utilizar localmente:
+
+<ul>
+	<li>clonar o repositório do github</li>
+	<li>rodar o comando > git clone link-copiado</li>
+	<li>rodar o comando > yarn add</li>
+	
 
 ### 🛠 Tecnologias
 
