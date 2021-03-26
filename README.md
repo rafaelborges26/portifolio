@@ -1,13 +1,23 @@
 # Moveitnow
 
 ## Descrição do Projeto
-<p align="center">O projeto utiliza da técnica do pomodoro, que seria o foco durante 25 minutes na tarefa e depois um tempo de descanso.</p>
-<p align="center">o projeto incentiva o uso desse tempo de descanso com tarefas simples e que ajudam a evitar problemas de visão e problemas corporais, tornando a experiencia das tarefas melhores</p>
+<p align="center">O projeto utiliza da técnica pomodoro, que consiste no foco durante 25 minutos na tarefa e depois um tempo livre de descanso.</p>
+<p align="center">o projeto incentiva o uso desse tempo de descanso com tarefas simples e que ajudam a evitar problemas de visão e problemas corporais, tornando a experiência das tarefas melhores</p>
 
 <h1 align="center">
     <a href="https://moveitnow-one.vercel.app/">🔗 Moveitnow</a>
 </h1>
 <p align="center">🚀 Aplicação web moveitnow</p>
+
+<strong>Página inicial</strong>
+<img src="public/github/pageInitial.png" alt="Página inicial" />
+
+<strong>Novo desafio</strong>
+<img src="public/github/newChallenge.png" alt="Novo desafio" />
+
+<strong>Novo level</strong>
+<img src="public/github/levelup.png" alt="Novo level" />
+
 
 ### 🛠 Utilizar
 
