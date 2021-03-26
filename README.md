@@ -18,6 +18,10 @@
 <strong>Novo level</strong>
 <img src="public/github/levelup.png" alt="Novo level" />
 
+<strong>Tela responsiva</strong>
+<br/>
+<img src="public/github/responsive.png" alt="Tela responsiva" />
+
 
 ### 🛠 Utilizar
 
