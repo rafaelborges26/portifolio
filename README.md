@@ -9,6 +9,16 @@
 </h1>
 <p align="center">🚀 Aplicação web moveitnow</p>
 
+<strong>Página inicial</strong>
+<img src="public/github/pageInitial.png" alt="Página inicial" />
+
+<strong>Novo desafio</strong>
+<img src="public/github/newChallenge.png" alt="Novo desafio" />
+
+<strong>Novo level</strong>
+<img src="public/github/levelup.png" alt="Novo level" />
+
+
 ### 🛠 Utilizar
 
 Para utilizar localmente:
