@@ -8,6 +8,8 @@ import { CountDown } from '../components/CountDown';
 import { ChallengeBox } from '../components/ChallengeBox'
 import { CountdownProvider } from '../contexts/CountDownContext';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
+import { RegisterModal } from '../components/RegisterModal'
+import { useEffect, useState } from 'react';
 //o que será a home da pagina
 
 interface Props {
@@ -17,7 +19,14 @@ interface Props {
 }
 
 export default function Home(props) {
-  console.log(props)
+
+
+useEffect(() => {
+  
+})
+
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(true)
+
   return (
     <ChallengesProvider level = {props.level} currentExperience= {props.currentExperience} challengeCompleted = {props.challengeCompleted} >
       <div className={styles.container}>   
@@ -40,23 +49,19 @@ export default function Home(props) {
       </section>
     </CountdownProvider>
       </div>
+      <RegisterModal />
       </ChallengesProvider>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-    const user = {
-      level: 1,
-      xp: 50,  
-}
-console.log(user)
 
 const { level, currentExperience, challengeCompleted } = ctx.req.cookies //obtendo dos cookies
 
   return {
     props: {level: Number(level),
            currentExperience: Number(currentExperience),
-           challengeCompleted: Number(challengeCompleted)
+           challengeCompleted: Number(challengeCompleted),
           }
   }
 }
