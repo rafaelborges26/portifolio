@@ -5,37 +5,42 @@ import { CompletedChallenges } from '../components/CompletedChallenges';
 import { LevelUpModal } from '../components/LevelUpModal';
 
 interface userContextData {
-    setUser: () => void,
+    setUser: (string) => void,
+    getUser: () => string,
+
    }
 
-interface ChallengeContextProps {
+interface userProps {
     children: ReactNode;
-    level: number;
-    currentExperience: number;
-    challengeCompleted: number;
+    name: number;
 }
 
 
 export const UserContext = createContext({} as userContextData );
-const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)
 
-export function setUser(nameUser: string) {
-    
+export function userProvider({children} :userProps) {
+
+
+const [name, setName] = useState<string>('')
+
+function setUser(nameUser: string) {
+    setName(nameUser)    
 }
 
-export function ChallengesProvider({ children, ...rest }: ChallengeContextProps) {
- 
-        Cookies.set('name', String(name))        
-
+function getUser() {
+    return name    
+}
 
 return (
     <UserContext.Provider 
         value={{ setUser,
+                 getUser,
                 }}
                 >
         {children}
     </UserContext.Provider>
 )
+
 }
 
 
