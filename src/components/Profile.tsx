@@ -6,7 +6,7 @@ export function Profile() {
     const { level, userName } = useContext(ChallengesContext)
     return (
         <div className={styles.profileContainer}>
-            <img src="https://github.com/rafaelborges26.png" alt="Rafael Borges"/>
+            <img src="https://i.pinimg.com/564x/86/13/c7/8613c7dec377dfaa48e2f9c41920afb0.jpg" alt="Rafael Borges"/>
             <div>
                 <strong> { userName !== 'undefined' ? userName : 'Usuário' }</strong>
                 <p>
