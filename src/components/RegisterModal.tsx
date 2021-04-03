@@ -1,10 +1,12 @@
-import { useContext, SyntheticEvent, useState, ChangeEvent } from 'react'
+import { useContext, SyntheticEvent, useState, ChangeEvent, useEffect } from 'react'
 import { ChallengesContext } from '../contexts/ChallengesContext'
 import styles from '../styles/Components/RegisterModal.module.css'
 import Cookies from 'js-cookie'
 
 export function RegisterModal() {
-    const { level, closeLevelUpModalClose } = useContext(ChallengesContext)
+    const { isRegisterModalOpen, closeRegisterModalClose, setNameUser } = useContext(ChallengesContext)
+
+    const [nameValue, setNameValue] = useState('')
 
     const [values, setValues] = useState({
         name: "",
@@ -21,30 +23,49 @@ export function RegisterModal() {
         event.preventDefault();
         console.log(values.name);
 
-        Cookies.set('name', String(values.name))
+        setNameUser(values.name)
+        setNameValue(values.name)
       }
 
     return (
-        <div className={styles.overlay}>        
+      nameValue ? (
+       <div className={styles.overlay} style={{ display: 'none' }} > :
         <div className={styles.container}>
-            <header>Bem vindo!</header>
-            <strong>Como você se chama?</strong>
-            <p>informe seu nome para ser chamado por ele no moveitnow.</p>
-
-            <button type="button" onClick={closeLevelUpModalClose }>
-                <img src="icons/close.svg" alt="Fechar modal"/>
-            </button>
+          <header>Bem vindo!</header>
+          <strong>Como você se chama?</strong>
+          <p>informe seu nome para ser chamado por ele no moveitnow.</p>
+          <button type="button" onClick={closeRegisterModalClose}>
+            <img src="icons/close.svg" alt="Fechar modal"/>
+          </button>
 
             <form onSubmit={onSubmit}>
-
-            <input type="text" name="name" id="name" value={values.name} onChange={handleInput}/>
-            
+              <input type="text" name="name" id="name" value={values.name} onChange={handleInput}/>
             <button type="button" className="btnOk" onClick={onSubmit} >
                 OK  
             </button>
             </form>
         </div>
-        </div>
+        </div>) 
+        : (
+        <div className={styles.overlay} style={{ display: 'flex' }} > :
+        <div className={styles.container}>
+          <header>Bem vindo!</header>
+          <strong>Como você se chama?</strong>
+          <p>informe seu nome para ser chamado por ele no moveitnow.</p>
+          <button type="button" onClick={closeRegisterModalClose}>
+           <img src="icons/close.svg" alt="Fechar modal"/>
+          </button>
 
+          <form onSubmit={onSubmit}>
+
+            <input type="text" name="name" id="name" value={values.name} onChange={handleInput}/>
+          
+            <button type="button" className="btnOk" onClick={onSubmit} >
+              OK  
+            </button>
+          </form>
+          </div>
+          </div>
+          )
     )
 }

@@ -17,12 +17,6 @@
     align-content: center;    
 }
 
-.container button {
-    background: var(--backgroundDard);
-}
-
-
-
 @media(max-width: 650px) {
     .container section {
         display: flex;

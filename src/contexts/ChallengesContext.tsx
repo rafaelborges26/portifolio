@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import challenges from '../../challenges.json'
 import { CompletedChallenges } from '../components/CompletedChallenges';
 import { LevelUpModal } from '../components/LevelUpModal';
+import { RegisterModal } from '../components/RegisterModal';
 
 interface challenge {
     type: 'body' | 'eye',
@@ -21,7 +22,11 @@ interface challengesContextData {
     resetChallenge: () => void,
     completeChallenge: () => void,
     closeLevelUpModalClose: () => void,
+    setNameUser: (name: string) => void,
     userName: string,
+    closeRegisterModalClose: () => void,
+    isRegisterModalOpen: boolean,
+
 }
 
 interface ChallengeContextProps {
@@ -42,9 +47,13 @@ export function ChallengesProvider({ children, ...rest }: ChallengeContextProps)
     const [challengeCompleted, setchallengeCompleted] = useState(rest.challengeCompleted ?? 0)
     const [activeChallenge, setActiveChallenge] = useState(null)
     const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)
+    const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(true)
     const [userName, setUserName] = useState(rest.name)
 
     const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
+
+    
+
 
     useEffect(() => {
         Notification.requestPermission()
@@ -67,6 +76,11 @@ export function ChallengesProvider({ children, ...rest }: ChallengeContextProps)
 
     function closeLevelUpModalClose() {
         setIsLevelUpModalOpen(false)
+    } 
+
+    function closeRegisterModalClose() {
+        setIsRegisterModalOpen(false)
+        console.log("closed")
     } 
 
     async function startNewChallenge() {
@@ -106,7 +120,13 @@ export function ChallengesProvider({ children, ...rest }: ChallengeContextProps)
         setActiveChallenge(null)
 
         setchallengeCompleted(challengeCompleted + 1)
-    }   
+    }
+    
+    async function setNameUser(name: string) {
+        setUserName(name)
+        Cookies.set('name', String(name))
+        closeRegisterModalClose()
+    }
 
 return (
     <ChallengesContext.Provider 
@@ -120,11 +140,15 @@ return (
                  experienceToNextLevel,
                  completeChallenge,
                  closeLevelUpModalClose,
+                 setNameUser,
                  userName,
+                 closeRegisterModalClose,
+                 isRegisterModalOpen,
                 }}
                 >
         {children}
         {isLevelUpModalOpen && <LevelUpModal /> }
+
     </ChallengesContext.Provider>
 )
 }

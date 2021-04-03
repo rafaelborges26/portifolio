@@ -8,11 +8,10 @@ export function Profile() {
         <div className={styles.profileContainer}>
             <img src="https://github.com/rafaelborges26.png" alt="Rafael Borges"/>
             <div>
-                <strong>{userName}</strong>
+                <strong> { userName !== 'undefined' ? userName : 'Usuário' }</strong>
                 <p>
                     <img src="icons/level.svg" alt="Level"/>
                    Level {level}</p>
-
             </div>
         </div>
     )
