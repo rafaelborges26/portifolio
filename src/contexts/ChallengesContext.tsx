@@ -80,7 +80,6 @@ export function ChallengesProvider({ children, ...rest }: ChallengeContextProps)
 
     function closeRegisterModalClose() {
         setIsRegisterModalOpen(false)
-        console.log("closed")
     } 
 
     async function startNewChallenge() {

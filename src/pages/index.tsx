@@ -20,9 +20,6 @@ interface Props {
 }
 
 export default function Home(props) {  
-  const { isRegisterModalOpen, closeRegisterModalClose } = useContext(ChallengesContext)
-  console.log(isRegisterModalOpen)
-
   return (
     <>
     <ChallengesProvider level = {props.level} currentExperience= {props.currentExperience} challengeCompleted = {props.challengeCompleted} name = {props.name} >
