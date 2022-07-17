@@ -1,6 +1,7 @@
 :root {
     --white: #fff;
     --background: #F2F3F5;
+    --black: #111;
     --gray-line: #DCDDE0;
     --text: #666666;
     --text-highlight: #B3B9FF;
@@ -15,13 +16,13 @@
 
 @media(max-width: 1080px) {
     html {
-        font-size: 93.75%; /*diminuindo 1 px de todos os atributos*/
+        font-size: 93.75%;
     }    
 }
 
 @media(max-width: 720px) {
     html {
-        font-size: 87.5%; /*diminuindo + 1 px de todos os atributos*/
+        font-size: 87.5%;
     }    
 }
 
