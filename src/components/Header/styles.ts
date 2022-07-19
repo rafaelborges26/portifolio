@@ -21,15 +21,47 @@ export const Logo = styled.img`
     border-radius: 25px;
 `;
 
-export const OptionsContent = styled.div`
+export const ButtonContainerMenu = styled.div``;
+
+export const OptionsContent = styled.div<IHeader>`
     display: flex;
+    
+    @media(max-width: 1024px) {
+        //display: none;
+        position: absolute;
+        top: 92px;
+        right: 0;
+        width: 100%;
+        transition: max-height 1s;
+        overflow: hidden;
+        max-height: 0;    
+        justify-content: center;
+        width: inherit;
+
+
+        ${(props) =>
+            props.menuActive &&
+            css`
+                max-height: 300px;
+            `};
+            
+    }
 
 `
+
+export const OptionText = styled.h5`
+    font-size: 24px;
+`;
 
 export const OptionsNav = styled.ul`
     display: flex;
     flex-direction: row;
     list-style-type: none;
+
+    @media(max-width: 1024px) {
+        flex-direction: column;
+        width: inherit;
+    }
 `
 
 export const Option = styled.li<IHeader>`
@@ -49,6 +81,24 @@ export const Option = styled.li<IHeader>`
     &:hover {
         color: ${shade(0.4, `#fff`)};
     };
+
+
+    @media(max-width: 1024px) { 
+     flex-direction: row;
+     margin-left: 0px;
+     width: 100%; 
+     background: var(--text-header);
+     border: 1px solid #ccc;
+     justify-content: center;
+
+     ${(props) =>
+      props.menuActive &&
+      css`
+        width: 100%; 
+    `};
+
+    }
+
 `
 
 export const Social = styled.ul`
@@ -56,6 +106,15 @@ export const Social = styled.ul`
     flex-direction: row;
     list-style-type: none;
     margin-left: 38px;
+
+    @media(max-width: 1024px) { 
+     flex-direction: row;
+     align-items: center;
+    justify-content: center;
+    background: var(--text-header);
+    margin-left: 0px;
+
+    }
 `
 
 export const SocialItem = styled.li`
@@ -69,5 +128,4 @@ export const SocialItem = styled.li`
     &:hover {
         color: ${shade(0.4, `#fff`)};
     }
-
 `

@@ -1,3 +1,5 @@
 export interface IHeader {
-    active: boolean;
+    active?: boolean;
+    menuActive?: boolean
+
 } 
