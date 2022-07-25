@@ -2,7 +2,10 @@
     --white: #fff;
     --background: #F2F3F5;
     --black: #111;
+    --dark-black: #333;
+    --dark-text: #757575;    
     --gray-line: #DCDDE0;
+    --gray-social: #ccc;
     --text: #666666;
     --text-highlight: #B3B9FF;
     --text-header: #1F2232;
@@ -31,6 +34,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-rendering: optimizelegibility;
 }
 
 body {

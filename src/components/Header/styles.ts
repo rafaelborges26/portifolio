@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { shade } from 'polished'
-import { IHeader } from './interfaces'
+import { IHeader, IHeaderStyles } from './interfaces'
 
 export const Container = styled.div`
     width: 100%;
@@ -23,7 +23,7 @@ export const Logo = styled.img`
 
 export const ButtonContainerMenu = styled.div``;
 
-export const OptionsContent = styled.div<IHeader>`
+export const OptionsContent = styled.div<IHeaderStyles>`
     display: flex;
     
     @media(max-width: 1024px) {
@@ -50,7 +50,7 @@ export const OptionsContent = styled.div<IHeader>`
 `
 
 export const OptionText = styled.h5`
-    font-size: 24px;
+    font-size: 18px;
 `;
 
 export const OptionsNav = styled.ul`
@@ -64,7 +64,7 @@ export const OptionsNav = styled.ul`
     }
 `
 
-export const Option = styled.li<IHeader>`
+export const Option = styled.li<IHeaderStyles>`
     align-items: center;
     display: flex;
     margin-right: 15px;
@@ -124,8 +124,9 @@ export const SocialItem = styled.li`
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    color: var(--gray-social);
 
     &:hover {
-        color: ${shade(0.4, `#fff`)};
+        color: ${shade(0.4, `#ccc`)};
     }
 `

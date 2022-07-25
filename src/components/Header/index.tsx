@@ -1,19 +1,20 @@
 import { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link'
 
 import { Container, LogoContent, Logo, ButtonContainerMenu, OptionText, OptionsContent, Option, OptionsNav, Social, SocialItem } from './styles';
 import { LinkedinLogo, GithubLogo, List } from 'phosphor-react' 
 import { IHeader } from './interfaces'
 import { Theme } from '../../styles/theme'
 
-export const Header = () => {
+export const Header = ( { optionDefined, setDefinedOption } :IHeader) => {
 
     const { breakPoints } = Theme
-    const [option, setOption] = useState<'about' | 'projects' | 'contact'>('about')
     const [windowWidth, setWindowWidth] = useState(0)
     const [openMenu, setOpenMenu] = useState(false)
 
     const onChangeOption = (option: 'about' | 'projects' | 'contact') => {
-        setOption(option)
+        setDefinedOption(option)
+        handleOpenMenu()
         console.log(option)
     }
 
@@ -43,17 +44,17 @@ export const Header = () => {
             
             <OptionsContent menuActive={openMenu}>
             <OptionsNav>
-            <Option onClick={() => onChangeOption('about')} active={option === 'about'} >
+            <Option onClick={() => onChangeOption('about')} active={optionDefined === 'about'} >
             <OptionText>
                 Sobre
             </OptionText>
             </Option>
-            <Option onClick={() => onChangeOption('projects')} active={option === 'projects'}>
+            <Option onClick={() => onChangeOption('projects')} active={optionDefined === 'projects'}>
             <OptionText>
                 Projetos
             </OptionText>
             </Option>
-            <Option onClick={() => onChangeOption('contact')} active={option === 'contact'}>
+            <Option onClick={() => onChangeOption('contact')} active={optionDefined === 'contact'}>
                 <OptionText>
                 Contato
                 </OptionText>
