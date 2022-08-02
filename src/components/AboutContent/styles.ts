@@ -1,16 +1,44 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
-export const Container = styled.div``
+export const Container = styled.div`
+    background: var(--white-background);
+`
+
+const appearFromLeft = keyframes` /* Animação para aparecer da esquerda */
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+`;
 
 export const Content = styled.section`
     display: flex;
     padding: 30px 60px 0;
+
+    animation: ${appearFromLeft} 1s;
+
+    @media(max-width: 1024px) {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0 0; 
+    }
 `
 
 export const Description = styled.div`
     width: 50%;
     display: flex;
     flex-direction: column;
+
+    @media(max-width: 1024px) {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
 `
 
 export const Title = styled.h1`
@@ -37,4 +65,11 @@ export const Image = styled.img`
     width: 50%;  
     max-height: 300px;
     max-width: 280px;
+
+
+    @media(max-width: 1024px) {
+        max-width: 50%;
+        max-height: inherit;
+    }
+
 `

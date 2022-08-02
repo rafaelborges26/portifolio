@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
-import { Header, AboutContent  } from '../components'
+import { Header, AboutContent, ProjectsContent  } from '../components'
 import { useState } from 'react'
 
 interface Props {
@@ -14,14 +14,16 @@ export default function CartList(props) {
 
   const [option, setOption] = useState<'about' | 'projects' | 'contact'>('about')
 
-
   return (
     <>
     <Header optionDefined={option} setDefinedOption={setOption} />
     
-    { option === 'about' && (
+    { option === 'about'
+     ? (
       <AboutContent /> 
-    ) }
+    ) : option === 'projects' &&
+      <ProjectsContent /> 
+    }
     </>
   )
 }
