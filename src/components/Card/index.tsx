@@ -11,7 +11,7 @@ export const Card = ( { title, description, image } :ICard) => {
 
     return (
         <Container>
-                <Image src="https://i.pinimg.com/564x/6f/d2/a9/6fd2a93a138c23d7e7b6d802907fe66d.jpg" alt="Image teste"  />
+                <Image src={image} alt={title}  />
             <Footer>
                 <Title>{title}</Title>
                 <Description>{description}</Description>

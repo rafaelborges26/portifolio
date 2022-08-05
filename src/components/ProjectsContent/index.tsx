@@ -1,26 +1,20 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useContext } from 'react';
 import { Card } from '../Card'
 import { Container, Content } from './styles';
 import api from '../../services/api'
 import { IRepos } from './interfaces'
+import { useRepository } from '../../hooks/useRepository';
 
 export const ProjectsContent = () => {
 
-    const [repositories, setRepositories] = useState<IRepos[]>([])
-
-    useEffect(() => {
-        api.get<IRepos[]>('/users/rafaelborges26/repos')
-        .then((response => setRepositories(response.data)))
-    },[])
-
-    console.log(repositories, 'test')
-
+    const { repositories, findImage } = useRepository()
+    
     return (
         <Container>
             <Content>
                 {
                     repositories && repositories.map(repo => (
-                        <Card title={repo.name} description={repo.description} image='teste22' key={repo.id} />        
+                        <Card title={repo.name} description={repo.description} image={findImage(repo.id) || ''} key={repo.id} />        
                     ))
                 }
             </Content>

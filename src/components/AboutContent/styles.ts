@@ -19,6 +19,7 @@ const appearFromLeft = keyframes` /* Animação para aparecer da esquerda */
 export const Content = styled.section`
     display: flex;
     padding: 30px 60px 0;
+    justify-content: center;
 
     animation: ${appearFromLeft} 1s;
 
@@ -37,6 +38,7 @@ export const Description = styled.div`
     @media(max-width: 1024px) {
         width: 100%;
         margin-bottom: 8px;
+        padding: 0 18px;
     }
 
 `

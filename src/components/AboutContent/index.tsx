@@ -13,11 +13,11 @@ export const AboutContent = () => {
                 Sobre.
             </Title> 
                 <Text>
-                    Olá eu sou um Desenvolvedor frontend, de Santos, Brasil.
+                    Olá eu sou Desenvolvedor frontend, de Santos, Brasil.
                 </Text>
 
                 <TextDescription>
-                Since 2005, I've enjoyed turning complex problems into simple, beautiful and intuitive designs. When I'm not pushing pixels, you'll find me cooking, gardening or working out in the park.
+                Desde 2016, estou na área de t.i, focando em solucionar problemas complexos da melhor forma possível, transformando problemas em layouts atratívos, intuítivos, pensando sempre na experiência do usuário. Quando não estou codando, costumo praticar esportes ou sair para praia.
                 </TextDescription>
             </Description>
             

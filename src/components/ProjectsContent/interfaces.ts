@@ -1,5 +1,5 @@
 export interface IRepos {
-    id: string;
+    id: number;
     src: string;
     name: string;
     description: string;
