@@ -13,7 +13,7 @@ export const AboutContent = () => {
                 Sobre.
             </Title> 
                 <Text>
-                    Olá eu sou Desenvolvedor frontend, de Santos, Brasil.
+                    Olá. Eu sou Desenvolvedor frontend, de Santos, Brasil.
                 </Text>
 
                 <TextDescription>

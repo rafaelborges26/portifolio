@@ -44,7 +44,7 @@ export const Description = styled.div`
 `
 
 export const Title = styled.h1`
-    font-size: 68px;
+    font-size: 58px;
     color: var(--dark-black);
 `
 
@@ -67,11 +67,12 @@ export const Image = styled.img`
     width: 50%;  
     max-height: 300px;
     max-width: 280px;
-
+    margin-left: 10px;
 
     @media(max-width: 1024px) {
         max-width: 50%;
         max-height: inherit;
+        margin-left: 0px;
     }
 
 `

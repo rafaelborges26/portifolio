@@ -13,26 +13,31 @@ interface RepositoryProviderProps {
     children: ReactNode;
 }
 
-
 export const RepositoryContext = createContext({} as IRepositoryContextData)
 
 export function RepositoryProvider({children} :RepositoryProviderProps) {
 
     const [repositories, setRepositories] = useState<IRepos[]>([])
 
-    console.log(repositories, 'test')
-    const getRepositories = useCallback(() => {
-        api.get<IRepos[]>('/users/rafaelborges26/repos?per_page=100')
-        .then((response => setRepositories(response.data)))
-    },[])
 
-    console.log(repositories, 'testing2')
+    const getRepositories = useCallback( async () => {
+        const response = await api.get<IRepos[]>('/users/rafaelborges26/repos?per_page=100')
+        
+        const responseRepositories = response.data
+
+        const publicRepositoriesOrdered = responseRepositories.sort((a: IRepos, b: IRepos) => {
+            return b.id - a.id;
+        });
+
+        setRepositories(publicRepositoriesOrdered)
+    },[])
 
     const findImage = (repoId: number): string => {
         const imageFound = initialImagesUrl.find(img => img.id === repoId)
+
         if(imageFound) return imageFound.url;
         
-        return 'https://raw.githubusercontent.com/rafaelborges26/gerenciamentoCompras-web/master/src/assets/github/listClients.jpeg'
+        return 'https://i.pinimg.com/564x/38/0c/76/380c76fc36121a67a87d1b5776420ca3.jpg'
         
     }
 
