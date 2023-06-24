@@ -27,18 +27,3 @@ export default function CartList(props) {
     </>
   )
 }
-
-//export const getServerSideProps: GetServerSideProps = async (ctx) => {
-//
-//const { level, currentExperience, challengeCompleted, name } = ctx.req.cookies //obtendo dos cookies
-//
-//
-//
-//  return {
-//    props: {level: Number(level),
-//           currentExperience: Number(currentExperience),
-//           challengeCompleted: Number(challengeCompleted),
-//           name: String(name),
-//          }
-//  }
-//}

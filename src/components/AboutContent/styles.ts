@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 
 export const Container = styled.div`
+    min-height: 620px;
     background: var(--white-background);
 `
 
@@ -63,16 +64,30 @@ export const TextDescription = styled.p`
     letter-spacing: 1px;
 `
 
-export const Image = styled.img` 
-    width: 50%;  
-    max-height: 300px;
-    max-width: 280px;
-    margin-left: 10px;
+export const ImageContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    height: inherit;
+    align-items: center;
+    padding: 1rem;
 
-    @media(max-width: 1024px) {
-        max-width: 50%;
-        max-height: inherit;
-        margin-left: 0px;
+    img {
+        max-height: 400px;
+        margin-left: 10px;
+        border-radius: 24px;
     }
 
+    @media(max-width: 1024px) {
+        max-height: 340px;
+    
+        img {
+            margin-left: 0px;
+            margin-top: 24px;
+            width: 523px;
+            max-height: inherit;
+            border-radius: 24px;
+            max-width: 280px;
+        }
+        
+    }
 `
